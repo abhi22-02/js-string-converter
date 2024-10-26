@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <h1 class="heading">Converter</h1>
+  <style>
+   
+    body{
+      background-color: rgb(252, 248, 193);
+    }
+    #input{
+      width: 550px;
+      height: 100px;
+      border-radius: 10px;
+      margin: 10px 100px;
+    }
+    @media screen and (max-width:768px) 
+    {#input{
+            width: 100px;
+    }}
+    @media screen and (min-width:600px) and (max-width:768px) 
+    {#input{
+            width: 200px;
+    }}
+    @media screen and (min-width:769px) and (max-width:992px) 
+    {#input{
+            width: 300px;
+    }}
+    @media screen and (min-width:993px) and (max-width:1200px) 
+    {#input{
+            width: 400px;
+    }}
+    #output{
+      border-radius: 10px;
+      width: 550px;
+      height: 100px;
+      margin: 10px 100px;
+    }
+    @media screen and (max-width:768px) 
+    {#output{
+            width: 100px;
+    }}
+    @media screen and (min-width:600px) and (max-width:768px) 
+    {#output{
+            width: 200px;
+    }}
+    @media screen and (min-width:769px) and (max-width:992px) 
+    {#output{
+            width: 300px;
+    }}
+    @media screen and (min-width:993px) and (max-width:1200px) 
+    {#output{
+            width: 400px;
+    }}
+    .but{
+      height: 20px;
+      width: 80px;
+      border-radius: 10px;
+      background-color: rgb(172, 161, 8);
+      color: aliceblue;
+      border: none;
+      cursor:pointer;
+      margin-left: 20px;
+      
+    }
+    @media screen and (max-width:768px) 
+    {.button-div{
+      display: flex;
+      flex-direction: column;
+      margin-left: 100px;
+      align-items: start;
+      
+    }}
+    @media screen and (min-width:600px)
+    {.but{
+            
+          margin-top: 10px;  
+    }}
+    @media screen and (max-width:768px) 
+    {.but{
+            
+          margin-top: 10px;  
+    }}
+    .but:hover{
+        box-shadow: 10px 10px 10px rgb(171, 144, 9);
+    }
+    .button-div{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      margin-left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="input"><br>
+  <input type="text" id="output">
+  <div class="button-div">
+    <button type="button" onclick="uppercase()" class="but"> uppercase</button>
+    <button type="button" onclick="lowercase()" class="but">lowercase</button>
+    <button type="button" onclick="count()" class="but">count</button>
+    <button type="button" onclick="wordcount()" class="but">Wordcount</button>
+  </div>
+
+  <script>
+    const inputcontent=document.getElementById('input');
+    const outputcontent=document.getElementById('output');
+
+    function uppercase()
+    {
+     const inputelement=inputcontent.value;
+     outputcontent.value=inputelement.toUpperCase();
+    }
+
+    function lowercase()
+    {
+     const inputelement=inputcontent.value;
+     outputcontent.value=inputelement.toLowerCase();
+    }
+
+    function count()
+    {
+     const inputelement=inputcontent.value;
+     outputcontent.value=inputelement.length;
+    }
+
+    function wordcount()
+    {
+     const inputelement=inputcontent.value;
+     outputcontent.value=inputelement.split(" ");
+    
+    }
+  </script>
+</body>
+</html>
